@@ -1,0 +1,30 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+                <br />
+                <input ng-model="$ctrl.query.cityName" class="SCH" placeholder="Enter the name of a Portuguese city" />
+            </p>
+            <br />
+            <br />
+            <br />
+            <br />
+            <ul class="citieslist">
+                <li ng-repeat="city in $ctrl.cities | filter:$ctrl.query | limitTo: 25" class="thumbnail city-list-item">
+                    <a href="#!/cities/{{city.cityName}}">{{city.cityName}}</a>
+                </li>
+            </ul>
+            <table>
+                <tr>
+                    <td style="text-align: right;">
+                    </td>
+                    <td style="width: 1%;">
+                        <a href="https://www.yahoo.com/?ilc=401" target="_blank">
+                            <img src="https://poweredby.yahoo.com/purple.png" width="134" height="29" />
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

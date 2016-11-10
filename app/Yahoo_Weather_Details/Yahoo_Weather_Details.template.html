@@ -1,0 +1,229 @@
+<div class="container-fluid">
+    <div class="row">
+        <loading></loading>
+        <div class="headerH0">
+            <h1 class="headerH1">
+                {{$ctrl.cityInfo.query.results.channel.item.title}}
+            </h1>
+            <br />
+            <br />
+        </div>
+        <div class="col-md-6">
+            <table class="TabForecast">
+                <tr>
+                    <td>
+                        <table class="thumbnail" style="display: inline-block; width: 250px;">
+                            <tr>
+                                <td class="TAB_H3">
+                                    Units
+                                </td>
+                                <td>
+                                    <table class="TabForecast2" style="display: inline-block;">
+                                        <tr>
+                                            <td class="TAB_H4">
+                                                Distance
+                                            </td>
+                                            <td class="TAB_DET1">
+                                                {{$ctrl.cityInfo.query.results.channel.units.distance}}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="TAB_H4">
+                                                Pressure
+                                            </td>
+                                            <td class="TAB_DET1">
+                                                {{$ctrl.cityInfo.query.results.channel.units.pressure}}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="TAB_H4">
+                                                Speed
+                                            </td>
+                                            <td class="TAB_DET1">
+                                                {{$ctrl.cityInfo.query.results.channel.units.speed}}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="TAB_H4">
+                                                Temperature
+                                            </td>
+                                            <td class="TAB_DET1">
+                                                {{$ctrl.cityInfo.query.results.channel.units.temperature}}
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                        <table class="thumbnail">
+                            <tr ng-repeat="cityForecast in $ctrl.cityInfo.query.results.channel.item.forecast" ng-if="$index == 0">
+                                <td style="width: 20%;">
+                                    {{cityForecast.date}}
+                                </td>
+                                <td style="width: 10%;">
+                                    <img src="http://l.yimg.com/a/i/us/we/52/{{cityForecast.code}}.gif" />
+                                </td>
+                                <td style="width: 50%;">
+                                    {{cityForecast.text}}
+                                </td>
+                                <td style="width: 10%;">
+                                    {{cityForecast.high}}º
+                                </td>
+                                <td style="width: 10%; color: #a5d6ff;">
+                                    {{cityForecast.low}}º
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    &nbsp;
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="TAB_H1">
+                                    Wind
+                                </td>
+                                <td colspan="4">
+                                    <table class="TabForecast2">
+                                        <tr>
+                                            <td class="TAB_H2">
+                                                Chill
+                                            </td>
+                                            <td class="TAB_DET">
+                                                {{$ctrl.cityInfo.query.results.channel.wind.chill}}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="TAB_H2">
+                                                Direction
+                                            </td>
+                                            <td class="TAB_DET">
+                                                {{$ctrl.cityInfo.query.results.channel.wind.direction}}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="TAB_H2">
+                                                Speed
+                                            </td>
+                                            <td class="TAB_DET">
+                                                {{$ctrl.cityInfo.query.results.channel.wind.speed}}
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    &nbsp;
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="TAB_H1">
+                                    Atmosphere
+                                </td>
+                                <td colspan="4">
+                                    <table class="TabForecast2">
+                                        <tr>
+                                            <td class="TAB_H2">
+                                                Humidity
+                                            </td>
+                                            <td class="TAB_DET">
+                                                {{$ctrl.cityInfo.query.results.channel.atmosphere.humidity}}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="TAB_H2">
+                                                Pressure
+                                            </td>
+                                            <td class="TAB_DET">
+                                                {{$ctrl.cityInfo.query.results.channel.atmosphere.pressure}}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="TAB_H2">
+                                                Rising
+                                            </td>
+                                            <td class="TAB_DET">
+                                                {{$ctrl.cityInfo.query.results.channel.atmosphere.rising}}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="TAB_H2">
+                                                Visibility
+                                            </td>
+                                            <td class="TAB_DET">
+                                                {{$ctrl.cityInfo.query.results.channel.atmosphere.visibility}}
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    &nbsp;
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="TAB_H1">
+                                    Astronomy
+                                </td>
+                                <td colspan="4">
+                                    <table class="TabForecast2">
+                                        <tr>
+                                            <td class="TAB_H2">
+                                                Sunrise
+                                            </td>
+                                            <td class="TAB_DET">
+                                                {{$ctrl.cityInfo.query.results.channel.astronomy.sunrise}}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="TAB_H2">
+                                                Sunset
+                                            </td>
+                                            <td class="TAB_DET">
+                                                {{$ctrl.cityInfo.query.results.channel.astronomy.sunset}}
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    &nbsp;
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-6">
+            <table class="TabForecast">
+                <tr ng-repeat="cityForecast in $ctrl.cityInfo.query.results.channel.item.forecast" ng-if="$index > 0 && $index < 6" class="thumbnail city-list-item">
+                    <td style="width: 30%;">
+                        {{cityForecast.date}}
+                    </td>
+                    <td style="width: 10%;">
+                        <img src="http://l.yimg.com/a/i/us/we/52/{{cityForecast.code}}.gif" />
+                    </td>
+                    <td style="width: 50%;">
+                        {{cityForecast.text}}
+                    </td>
+                    <td style="width: 10%;">
+                        {{cityForecast.high}}º
+                    </td>
+                    <td style="width: 10%; color: #a5d6ff;">
+                        {{cityForecast.low}}º
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="5" style="text-align: right;">
+                        <a href="https://www.yahoo.com/?ilc=401" target="_blank">
+                            <img src="https://poweredby.yahoo.com/purple.png" width="134" height="29" />
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
