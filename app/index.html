@@ -1,28 +1,36 @@
 <!doctype html>
-<html lang="en" ng-app="YahooWeatherAPP">
+<html lang="en" ng-app="yahooWeatherApp">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
     <title>Yahoo Weather</title>
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="app.css" />
-    <link rel="stylesheet" href="app.animations.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="common/assets/styles/app.css"/>
+    <link rel="stylesheet" href="common/assets/styles/app.animations.css"/>
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="app.module.js"></script>
+    <script src="common/scripts/source/app.module.js"></script>
     <script src="app.config.js"></script>
-    <script src="app.animations.js"></script>
-    <script src="Yahoo_Weather/Yahoo_Weather.module.js"></script>
-    <script src="Yahoo_Weather/Yahoo_Weather.component.js"></script>
-    <script src="Yahoo_Weather_Details/Yahoo_Weather_Details.module.js"></script>
-    <script src="Yahoo_Weather_Details/Yahoo_Weather_Details.component.js"></script>
+    <script src="common/scripts/source/app.animations.js"></script>
+    <script src="modules/Yahoo_Weather_Main/source/scripts/Yahoo_Weather.module.js"></script>
+    <script src="modules/Yahoo_Weather_Main/source/scripts/Yahoo_Weather.component.js"></script>
+    <script src="modules/Yahoo_Weather_Details/source/scripts/Yahoo_Weather_Details.module.js"></script>
+    <script src="modules/Yahoo_Weather_Details/source/scripts/Yahoo_Weather_Details.component.js"></script>
 </head>
 <body>
-    <div class="view-container">
-        <div ng-view class="view-frame">
-        </div>
+<div class="col-xs-12 appHeader">
+    <h1>Yahoo! Weather</h1>
+</div>
+<div class="col-xs-12 view-container">
+    <div ng-view class="view-frame">
     </div>
+</div>
+<div class="col-xs-4 col-xs-offset-8 poweredBy">
+    <a href="https://www.yahoo.com/?ilc=401" target="_blank">
+        <img src="https://poweredby.yahoo.com/purple.png" width="134" height="29"/>
+    </a>
+</div>
 </body>
 </html>

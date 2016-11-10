@@ -1,7 +1,7 @@
 'use strict';
 
 angular.
-  module('YahooWeatherAPP').
+  module('yahooWeatherApp').
   animation('.city', function phoneAnimationFactory() {
       return {
           addClass: animateIn,

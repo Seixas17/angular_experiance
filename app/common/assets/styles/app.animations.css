@@ -1,0 +1,63 @@
+.list-item.ng-enter, .list-item.ng-leave, .list-item.ng-move {
+    overflow: hidden;
+    transition: 0.3s linear all;
+}
+
+.list-item.ng-enter, .list-item.ng-leave.ng-leave-active, .list-item.ng-move {
+    height: 0;
+    margin-bottom: 0;
+    opacity: 0;
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+.list-item.ng-enter.ng-enter-active, .list-item.ng-leave, .list-item.ng-move.ng-move-active {
+    height: 20px;
+    margin-bottom: 20px;
+    opacity: 1;
+    padding-bottom: 4px;
+    padding-top: 5px;
+}
+
+.view-container {
+    position: relative;
+}
+
+.view-frame {
+    margin-top: 5px;
+}
+
+.view-frame.ng-enter, .view-frame.ng-leave {
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.view-frame.ng-enter {
+    animation: 2s fade-in;
+    z-index: 100;
+}
+
+.view-frame.ng-leave {
+    animation: 2s fade-out;
+    z-index: 99;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}

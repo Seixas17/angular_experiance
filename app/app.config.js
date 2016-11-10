@@ -1,18 +1,13 @@
 'use strict';
 
-angular.
-  module('YahooWeatherAPP').
-  config(['$locationProvider' ,'$routeProvider',
+angular.module('yahooWeatherApp').config(['$locationProvider', '$routeProvider',
     function config($locationProvider, $routeProvider) {
-      $locationProvider.hashPrefix('!');
+        $locationProvider.hashPrefix('!');
 
-      $routeProvider.
-		when('/cities', {
-          template: '<city-list></city-list>'
-        }).
-		when('/cities/:cityName', {
-          template: '<city-detail></city-detail>'
-        }).
-        otherwise('/cities');
+        $routeProvider.when('/cities', {
+            template: '<yahoo-wheather-main></yahoo-wheather-main>'
+        }).when('/cities/:cityName', {
+            template: '<yahoo-wheather-detail></yahoo-wheather-detail>'
+        }).otherwise('/cities');
     }
-  ]);
+]);

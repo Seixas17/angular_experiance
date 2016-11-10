@@ -1,0 +1,64 @@
+<div class="container-fluid">
+    <div class="row">
+        <div ng-show="$ctrl.dataNotLoaded" class="loading">
+            <img src="common/assets/images/loading.gif"/>
+        </div>
+        <div ng-show="$ctrl.dataError" class="error">
+            <img src="common/assets/images/error.gif"/>
+            <h2>Something went Whrong!</h2>
+            <h3>You will be redirected to the Homepage</h3>
+        </div>
+        <div ng-hide="$ctrl.dataNotLoaded || $ctrl.dataError">
+            <div>
+                <h2>
+                    {{::$ctrl.cityInfo.query.results.channel.location.city}}
+                </h2>
+                <h2>
+                    {{::$ctrl.cityInfo.query.results.channel.location.country}}
+                </h2>
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <ul class="forecastList">
+                    <li ng-repeat="cityForecast in $ctrl.cityInfo.query.results.channel.item.forecast"
+                        ng-if="::$index == 0" class="thumbnail list-item">
+                        <div class="col-xs-2">{{::cityForecast.date}}</div>
+                        <div class="col-xs-2"><img ng-src="http://l.yimg.com/a/i/us/we/52/{{::cityForecast.code}}.gif"/></div>
+                        <div class="col-xs-4">{{::cityForecast.text}}</div>
+                        <div class="col-xs-2 tempMin">{{::cityForecast.low}}&nbsp;({{::$ctrl.cityInfo.query.results.channel.units.temperature}})</div>
+                        <div class="col-xs-2 tempMax">{{::cityForecast.high}}&nbsp;({{::$ctrl.cityInfo.query.results.channel.units.temperature}})</div>
+                    </li>
+                    <li class="thumbnail list-item forecastChannel">
+                        <div class="col-xs-12 col-sm-6"
+                             ng-repeat="(channelKey, channelData) in $ctrl.cityInfo.query.results.channel"
+                             ng-if="channelKey == 'units' || channelKey == 'wind' || channelKey == 'atmosphere' || channelKey == 'astronomy'">
+                            <div class="col-xs-12">
+                                <h3>{{::channelKey | uppercase}}</h3>
+                            </div>
+                            <div class="col-xs-12 forecastChannelDetails"
+                                 ng-repeat="(chDataKey, chDataValue) in channelData">
+                                <div class="col-xs-7">
+                                    {{::chDataKey | uppercase}}
+                                </div>
+                                <div class="col-xs-5">
+                                    {{::chDataValue}}
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <ul class="forecastList">
+                    <li ng-repeat="cityForecast in $ctrl.cityInfo.query.results.channel.item.forecast"
+                        ng-if="::$index != 0" class="thumbnail list-item">
+                        <div class="col-xs-2">{{::cityForecast.date}}</div>
+                        <div class="col-xs-2"><img ng-src="http://l.yimg.com/a/i/us/we/52/{{::cityForecast.code}}.gif"/></div>
+                        <div class="col-xs-4">{{::cityForecast.text}}</div>
+                        <div class="col-xs-2 tempMin">{{::cityForecast.low}}&nbsp;({{::$ctrl.cityInfo.query.results.channel.units.temperature}})</div>
+                        <div class="col-xs-2 tempMax">{{::cityForecast.high}}&nbsp;({{::$ctrl.cityInfo.query.results.channel.units.temperature}})</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

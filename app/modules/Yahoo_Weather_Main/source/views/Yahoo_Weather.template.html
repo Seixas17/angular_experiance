@@ -1,0 +1,12 @@
+<div class="container-fluid">
+    <div class="searchDiv">
+        <input ng-model="$ctrl.query.cityName" class="search" placeholder="Enter the name of a Portuguese city"/>
+    </div>
+    <div class="row">
+        <ul class="citieslist">
+            <li ng-repeat="city in $ctrl.cities | filter:$ctrl.query | limitTo: 25" class="thumbnail list-item">
+                <a href="#!/cities/{{::city.cityName}}">{{::city.cityName}}</a>
+            </li>
+        </ul>
+    </div>
+</div>
